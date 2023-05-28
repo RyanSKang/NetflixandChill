@@ -1,12 +1,16 @@
 // Linking API 
-const BaseUrl ="https://movie-database-alternative.p.rapidapi.com/?s=Avengers%20Endgame&r=json&page=1";
-const Key='51a8b8f970msh294e2129279c3a5p130ec8jsna317748ab7a8'
+// const BaseUrl ="https://movie-database-alternative.p.rapidapi.com/?s=Avengers%20Endgame&r=json&page=1";
+// const Key='51a8b8f970msh294e2129279c3a5p130ec8jsna317748ab7a8'
+
+const BaseUrl = "http://www.omdbapi.com/?i=tt3896198&apikey=6d03d3e5"
+const Key = "6d03d3e5"
 
 const options = {
 	method: 'GET',
 	headers: {
 		"X-RapidAPI-Key": Key,
-		"X-RapidAPI-Host": 'movie-database-alternative.p.rapidapi.com'
+		// "X-RapidAPI-Host": 'movie-database-alternative.p.rapidapi.com'
+        "X-RapidAPI-Host": 'https://www.omdbapi.com/apikey.aspx'
 	}
 };
 // try {
