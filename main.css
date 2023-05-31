@@ -14,7 +14,7 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2%;
+    margin-top: 1%;
 }
 .searchContainer{
     display: flex;
@@ -33,42 +33,6 @@ img{
 #movieInput{
     width: 1200px;
 }
-
-/* Search List images and year within search Bar */
-.searchList{
-    position: absolute;
-    right: 20;
-    top: 25%;
-    max-height: 500px;
-    overflow-y: scroll;
-    z-index: 10;
-    color: #fff;
-    width:1165px;
-    display: flex;
-    flex-direction: column;
-}
-.searchList .searchListResults{
-background-color: var(--light-dark-color);
-padding:0.5rem;
-border-bottom: 1px solid var(--dark-color);
-width: 1165px;
-color:#ffff;
-cursor: pointer;
-transition: background-color 200ms ease;
-
-}
-.searchList .searchListResults:Hover{
-    background-color: rgb(75, 75, 76);
-}
-.searchListResults{
-    display: flex;
-    align-items: center;
-}
-.movieThumbnail img{
-    width: 80px;
-    margin-right: 1rem;
-
-}
 .movieDetail h3{
     font-weight: 600;
     font-size: 1rem;
@@ -78,22 +42,6 @@ transition: background-color 200ms ease;
     margin-top: .5rem;
     font-weight: 600;
     opacity: 0.7;
-}
-/* Scroll bar for search list */
-.searchList::-webkit-scrollbar{
-    width: 8px;
-}
-.searchList::-webkit-scrollbar-track{
-    box-shadow: inset 0 0 8px rgba(136, 135, 135, 0.4);
-}
-.searchList::-webkit-scrollbar-thumb{
-    background-color: whitesmoke;
-    outline: none;
-    border-radius: 8px;
-}
-/* javascript css */
-.hide-searchList{
-    display: none;
 }
 
 /* Movie Results img display */
@@ -108,4 +56,10 @@ transition: background-color 200ms ease;
 }
 .resultsBtn{
    margin-left: 10%;
+}
+/* Movie Results Layout */
+.searchGrid{
+    display: inline-block;
+    flex-direction: row;
+    margin-top: 0;
 }
