@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Review - Favorites</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css" rel="stylesheet"> 
+</head>
+<body>
+  <header class="bg-gray-900 text-white p-4 text-center">
+    <h1 class="text-2xl font-bold">Favorites</h1>
+  </header>
+  <section class="mt-8">
+    <h2 class="text-2xl font-bold mb-4">Your Favorite Movies</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {{#each favorites}}
+      <div class="bg-white shadow p-4 rounded">
+        <h3 class="text-xl font-semibold mb-2">{{movieTitle}}</h3>
+        <p class="text-gray-500 mb-4">Genre: {{genre}}</p>
+        <p class="mb-2">Release Year: {{releaseYear}}</p>
+        <p class="mb-2">{{summary}}</p>
+        <p class="text-blue-500 cursor-pointer hover:underline">View Details</p>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+  
+  <footer class="bg-gray-900 text-white p-4 text-center">
+    <p>&copy; 2023 NetflixandChill All rights reserved.</p>
+  </footer>
+</body>
+</html>
