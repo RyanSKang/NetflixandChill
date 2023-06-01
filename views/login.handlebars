@@ -1,0 +1,18 @@
+<!-- views/login.handlebars -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+</head>
+<body>
+  <h1>Login Page</h1>
+  {{#if error}}
+    <p>{{error}}</p>
+  {{/if}}
+  <form action="/login" method="POST">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Log In</button>
+  </form>
+</body>
+</html>
