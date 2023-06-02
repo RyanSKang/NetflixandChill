@@ -20,12 +20,12 @@
     </form>
     {{!-- Loop over each object in the projects array --}}
     <!-- Creating grid layout of Movie results -->
-    {{#each movies as |movie|}}
+    {{#each limitedResults as |movie|}}
     <div
         class="searchGrid w-96 border border-gray-200 rounded-lg shadow mt-14 ml-14 dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
             <img class="rounded-t-lg"
-                src="{{movie.poster}}"
+                src="{{movie.Poster}}"
                 alt="Movie Poster" />
         </a>
         <div class="p-5">
@@ -33,7 +33,7 @@
                 <a href="#">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{movie.Title}}</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{movie.plot}}</p>
+                {{!-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{movie.plot}}</p> --}}
             </div>
             <div class="resultsBtn">
             <a href="#"
