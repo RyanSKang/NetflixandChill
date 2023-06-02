@@ -50,53 +50,6 @@ app.post('/login', (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(3001, () => {
+  console.log('Server is running on port 3001');
 });
-
-// Handlebar features for Login.html
-// fetch('login.hanldebars')
-//     .then(response => response.text())
-//     .then(templateSource => {
-//         var template = handlebars.compile(templateSource);
-
-//         // Render the template
-//         var renderedHtml = template();
-//         document.getElementById("login-container").innerHTML = renderedHtml;
-//     });
-
-// // Server-side code
-// const express = require('express');
-// const mysql = require('mysql2');
-
-// const app = express();
-// const db = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'your_username',
-//     password: 'your_password',
-//     database: 'users'
-// });
-
-// app.use(express.urlencoded({ extended: true}));
-
-// app.post('/login', (req, res) => {
-//     const username = req.body.username;
-//     const password = req.body.username;
-
-//     db.query('SELET *FROM users WHERE username = ?', [username], (error, results) => {
-//         if (error) {
-//             console.error(error);
-//             return;
-//         }
-
-//         if (results.length === 0 || password !== results[0].password) {
-//             res.redirect('/login?error=invalid_credentials');
-//         } else {
-//             res.redirect('/dashboard');
-//         }
-//     });
-// });
-
-// app.listen(3000, () => {
-//     console.log('Server is running on port 3000');
-// });
