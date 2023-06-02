@@ -6,19 +6,19 @@ let resultsGrid=$('.searchGrid');
 let searchHistArr=[];
 
 // Fetching the API
-async function getMovieResults(searchTerm){
-    const URL=`https://www.omdbapi.com/?s=${searchTerm}&page=1&apikey=6d03d3e5`;
-    const response= await fetch(`${URL}`);
-    const data= await response.json();
-    console.log(data)
+// async function getMovieResults(searchTerm){
+//     const URL=`https://www.omdbapi.com/?s=${searchTerm}&page=1&apikey=6d03d3e5`;
+//     const response= await fetch(`${URL}`);
+//     const data= await response.json();
+//     console.log(data)
     // if(data.Response == "true") displayResult(data.Search);
-};
-getMovieResults('avengers');
+// };
+// getMovieResults('avengers');
 // Searching movies from API based on search Bar text input
-function searchMovies(){
-    let searchTerm=movieVal.value.trim();
-    console.log(searchTerm) 
-}
+// function searchMovies(){
+//     let searchTerm=movieVal.value.trim();
+//     console.log(searchTerm) 
+// }
 
 // handlebar needs to make component that will fill out the necessary requirements of api data into 
 // the page
@@ -29,12 +29,12 @@ function searchMovies(){
 
 // }
 
-searchBtn.on('click', function (event){
-    event.preventDefault();
-    searchHistArr.push(textVal.value);
-    console.log(textVal.value)
-    localStorage.setItem('movies', JSON.stringify(searchHistArr));
-});
+// searchBtn.on('click', function (event){
+//     event.preventDefault();
+//     searchHistArr.push(textVal.value);
+//     console.log(textVal.value)
+//     localStorage.setItem('movies', JSON.stringify(searchHistArr));
+// });
 
 
 
