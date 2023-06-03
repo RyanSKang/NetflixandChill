@@ -14,7 +14,9 @@ const router = require('express').Router();
 router.get('/synapsis/:movie', async (req, res) => {
     try {
         async function getMovieResults(title){
-            const URL=`https://www.omdbapi.com/?s=${title}&page=1&apikey=6d03d3e5`;
+            // const URL=`https://www.omdbapi.com/?s=${title}&page=1&apikey=6d03d3e5`;
+            // added new link to get the full plot of the movie
+            const URL="http://www.omdbapi.com/?t=The+Avengers&y=2012&plot=full";
             const res= await fetch(`${URL}`);
             const data= await res.json();
             res.render('synapsis', {
