@@ -3,7 +3,7 @@
     <form class="mt-14 searchContainer">
         <div class="flex">
             <div class="relative w-full searchBar">
-                <input type="text" id="movieInput"
+                <input type="text" id="movie_Input"
                     class="block p-2.5 z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                     placeholder="Search Movie Title!">
                 <button type="submit"
@@ -36,7 +36,7 @@
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{movie.Year}}</p>
             </div>
             <div class="resultsBtn">
-            <a href="/synapsis/Avengers"
+            <a href="/synapsis/{{move.Title}}"
                 class="mr-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Review
                 <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
