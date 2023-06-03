@@ -5,6 +5,12 @@ let movieVal=document.getElementById('movieInput');
 let resultsGrid=$('.searchGrid');
 let searchHistArr=[];
 
+// Registering public folder to express 
+var express = require('express');
+var app = express();
+app.use(express.static(__dirname + '/public'));
+app.listen(3001);
+
 // Fetching the API
 // async function getMovieResults(searchTerm){
 //     const URL=`https://www.omdbapi.com/?s=${searchTerm}&page=1&apikey=6d03d3e5`;
