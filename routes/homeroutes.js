@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
         })
     };
     try{
-    getMovieResults('avengers');
+    getMovieResults('scream');
 
 } catch (err) {
     res.status(500).json(err);
