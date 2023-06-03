@@ -1,6 +1,7 @@
 // Adding Dependencies
 const router = require('express').Router();
 const fetch= require('node-fetch');
+
 // Fetching the API using try and catch()
 router.get('/', async (req, res) => {
     let limitedResults=[];
