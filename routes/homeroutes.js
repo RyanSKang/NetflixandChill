@@ -2,6 +2,11 @@
 const router = require('express').Router();
 const fetch= require('node-fetch');
 
+// Registering public folder to express 
+var express = require('express');
+var app = express();
+app.use(express.static(__dirname + '/public'));
+
 // Fetching the API using try and catch()
 router.get('/', async (req, res) => {
     let limitedResults=[];
