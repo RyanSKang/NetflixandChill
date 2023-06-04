@@ -8,6 +8,7 @@ let searchHistArr = [];
 
 // 1. Define search value from user interaction 
 // 2. save search value and save it into local storage within the array
+
 function submitSearch(){
     let searchTerm=movieVal.value;
     console.log(searchTerm);
@@ -21,8 +22,6 @@ searchBtn.on('click', function(event){
         localStorage.setItem('Title', JSON.stringify(searchHistArr))
         submitSearch();
 });
-
-
 
 
 
