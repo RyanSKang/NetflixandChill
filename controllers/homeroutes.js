@@ -7,7 +7,7 @@ var express = require('express');
 var app = express();
 app.use(express.static(__dirname + '/public'));
 
-// Fetching the API using try and catch()
+// Fetching the API using try and catch() for GET Route
 router.get('/', async (req, res) => {
     let limitedResults=[];
         async function getMovieResults(searchTerm){
@@ -25,12 +25,19 @@ router.get('/', async (req, res) => {
         })
     };
     try{
-    getMovieResults('avengers');
+    getMovieResults('movie');
 
 } catch (err) {
     res.status(500).json(err);
 }
 });
+
+// Fetching the API using try and catch() for POST Route
+router.post('/movie', async (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
+});
+
 
 router.get('/synapsis/', async (req, res) => {
     try {
