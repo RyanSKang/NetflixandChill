@@ -64,6 +64,15 @@ router.get('/synapsis/:movie', async (req, res) => {
 //     console.log(textVal.value)
 //     localStorage.setItem('movies', JSON.stringify(searchHistArr));
 // });
+
+// router.post('', async (req, res) => {
+//     let response = req.body;
+//     res.send('Synapsis' + JSON.stringify(data));
+// })
+
+// app.listen(3001, () => {
+//     console.log('Now Listening!')
+// })
 module.exports = router;
 
 
