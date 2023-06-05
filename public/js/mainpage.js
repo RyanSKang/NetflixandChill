@@ -3,6 +3,7 @@
 let searchBtn = $('.searchBtn');
 let searchBar = $('.searchBar');
 let movieVal = document.getElementById('movie_Input');
+let form=$('#form');
 let resultsGrid = $('.searchGrid');
 let searchHistArr = [];
 
@@ -18,9 +19,16 @@ function submitSearch(){
 
 searchBtn.on('click', function(event){
         event.preventDefault();
-        searchHistArr.push(movieVal.value);
-        localStorage.setItem('Title', JSON.stringify(searchHistArr))
-        submitSearch();
+        var valObj= {
+            Title: movieVal.value
+        }
+        fetch('/', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(valObj)
+        })
 });
 
 
