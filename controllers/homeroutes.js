@@ -25,18 +25,23 @@ router.get('/', async (req, res) => {
         })
     };
     try{
-    getMovieResults('movie');
+    getMovieResults('avengers');
 
 } catch (err) {
     res.status(500).json(err);
 }
 });
 
-// Fetching the API using try and catch() for POST Route
+// Middleware
+app.use(express.urlencoded({ extended: false}));
+
 router.post('/movie', async (req, res) => {
     console.log(req.body);
     res.send(req.body);
+    // getMovieResults(req.body);
 });
+
+
 
 
 router.get('/synapsis/', async (req, res) => {
