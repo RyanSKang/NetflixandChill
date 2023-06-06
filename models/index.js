@@ -1,4 +1,4 @@
-const User = require('./user');
+const User = require('./user.js');
 const Favorite = require('./Favorite');
 
 User.hasMany(Favorite, {
