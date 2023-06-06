@@ -1,12 +1,12 @@
 console.log("Hello");
 let rating = document.getElementById("rating");
-let reviewText = document.getElementById("message");
-let movieTitle = document.getElementById("message");
-let userName = document.getElementById("message")
-let rate = document.getElementById("rate");
+let reviewText = document.getElementById("reviewText");
+let movieTitle = document.getElementById("movieTitle");
+let userName = document.getElementById("userName")
+let button = document.getElementById("button");
 let newReview = {rating, movieTitle, userName, reviewText}
 
-rate.addEventListener("click", function(event){
+button.addEventListener("click", function(event){
     // const rating = document.getElementById("rating").value
     // const reviewText= document.getElementById("message").value
     // const movieTitle= document.getElementById("message").dataset.title
