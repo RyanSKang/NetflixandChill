@@ -11,12 +11,6 @@ app.use(express.static(__dirname + "/public"));
 
 // Fetching the API using try and catch() for GET Route
 
-
-router.post("/syanpsis", async (req, res) => {
-  console.log(req.body);
-  res.send(req.body);
-});
-
 router.get('/', (req, res) => {
     try {
         getMovieResults('avengers').then(data =>{
@@ -53,8 +47,7 @@ router.post('/', (req, res) => {
 router.get('/synapsis/:movie', async (req, res) => {
     try {
         async function getSynapsis(title, year) {
-            // const URL=`https://www.omdbapi.com/?s=${title}&page=1&apikey=6d03d3e5`;
-            // added new link to get the full plot of the movie
+            // added new API link to get the full plot of the movie
             const URL = `http://www.omdbapi.com/?t=${title}&y=${year}&plot=full&apikey=6d03d3e5`;
             const response = await fetch(`${URL}`);
             const data = await response.json();
