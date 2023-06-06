@@ -5,6 +5,7 @@ let searchBar = $('.searchBar');
 let movieVal = document.getElementById('movie_Input');
 let form=$('#form');
 let resultsGrid = $('.searchGrid');
+let signupBtn=$('.signUp');
 let searchHistArr = [];
 
 // 1. Define search value from user interaction 
@@ -25,6 +26,10 @@ searchBtn.on('click', function(event){
         window.location.href= `/movie/${movieVal.value}`;
 });
 
+signupBtn.on('click', function(event){
+    event.preventDefault();
+    window.location.href='/login/'
+})
 
 
 

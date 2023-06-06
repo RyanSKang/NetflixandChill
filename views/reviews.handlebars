@@ -6,7 +6,7 @@
   <section class="mt-8 bg-gray-50">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {{#each reviews}}
-      <div class="bg-gray-50 shadow p-4 rounded">
+      <div class="bg-gray-500 shadow p-4 rounded">
         <h3 id="userName" class="text-xl font-semibold mb-2">{{userName}}</h3>
         <p id="movieTitle" class="text-gray-500 mb-4">Movie: {{movieTitle}}</p>
         <p id="rating" class="mb-2">Rating: {{rating}}/5</p>
@@ -16,21 +16,21 @@
       {{/each}}
     </div>
   </section>
-  <main class="container mx-auto p-4">
-    <section class="bg-white shadow p-4 rounded">
-      <h2 class="text-2xl font-bold mb-4">Write a Review</h2>
-      <form id="reviewForm" action="/reviews" method="POST" class="bg-gray-50">
+  <main class="container mx-auto p-4 rounded-lg shadow">
+    <section class="reviewSection bg-gray-900 shadow p-4 rounded">
+      <h2 class="text-2xl text-white text-left underline font-bold mb-4">Write a Review</h2>
+      <form id="reviewForm" action="/reviews" method="POST" class="bg-gray-900 text-white p-4 rounded">
         <div class="mb-4">
           <label for="movieTitle" class="block">Movie Title</label>
-          <input type="text" id="movieTitle" name="movieTitle" required class="w-full p-2 border rounded">
+          <input type="text" id="movieTitle" name="movieTitle" required class="w-full p-2 border bg-gray-500">
         </div>
         <div class="mb-4">
           <label for="rating" class="block">Rating</label>
-          <input type="number" id="rating" name="rating" min="1" max="5" required class="w-full p-2 border rounded">
+          <input type="number" id="rating" name="rating" min="1" max="5" required class="w-full p-2 border rounded bg-gray-500">
         </div>
         <div class="mb-4">
           <label for="reviewText" class="block">Review</label>
-          <textarea id="reviewText" name="reviewText" rows="4" required class="w-full p-2 border rounded"></textarea>
+          <textarea id="reviewText" name="reviewText" rows="4" required class="w-full p-2 border rounded bg-gray-500"></textarea>
         </div>
         <button id="button" type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Submit Review</button>
       </form>
@@ -44,4 +44,3 @@
   <script src="/models/Review.js"></script> 
 
 </body>
-</html>
