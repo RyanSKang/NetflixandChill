@@ -3,7 +3,7 @@ const router = express.Router();
 
 // GET route for displaying the reviews page
 router.get('/', (req, res) => {
-  res.render('reviews', { title: 'Movie Reviews' });
+  res.render('reviews');
 });
 
 module.exports = router;
