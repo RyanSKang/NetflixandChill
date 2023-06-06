@@ -4,7 +4,7 @@ const Review = require('../../models/Review');
 
 // GET route for displaying the reviews page
 router.get('/', (req, res) => {
-  res.render('reviews', { title: 'Movie Reviews' });
+  res.render('reviews');
 });
 
 // POST route
