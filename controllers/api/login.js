@@ -1,33 +1,35 @@
 // index.js
-const express = require('express');
-const exphbs  = require('express-handlebars');
-const mysql = require('mysql2');
+const router = require('express').Router();
+const {User} = require('../../models');
+// const express = require('express');
+// const exphbs  = require('express-handlebars');
+// const mysql = require('mysql2');
 
-const app = express();
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'your_username',
-  password: 'your_password',
-  database: 'your_database'
-});
+// const app = express();
+// const db = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'your_username',
+//   password: 'your_password',
+//   database: 'your_database'
+// });
 
-// Set up Handlebars as the view engine
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+// // Set up Handlebars as the view engine
+// app.engine('handlebars', exphbs());
+// app.set('view engine', 'handlebars');
 
-// Set the views directory
-app.set('views', 'views');
+// // Set the views directory
+// app.set('views', 'views');
 
-// Parse URL-encoded bodies (as sent by HTML forms)
-app.use(express.urlencoded({ extended: true }));
+// // Parse URL-encoded bodies (as sent by HTML forms)
+// app.use(express.urlencoded({ extended: true }));
 
 // Define a route to render the login.handlebars file
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.render('login');
 });
 
 // Define a route to handle the login form submission
-app.post('/login', (req, res) => {
+router.post('/login', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
@@ -48,3 +50,5 @@ app.post('/login', (req, res) => {
     }
   });
 });
+
+module.exports = router

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Favorite, User, Movie } = require('../../models');
+const { Favorite, User,  } = require('../../models');
 
 // Add a favorite
 router.post('/', async (req, res) => {

@@ -1,6 +1,19 @@
 const router = require('express').Router();
 const movieRoutes = require('./movieRoutes');
 
+const review= require('./reviews')
+const favorite= require('./favorites')
+router.use('/', homeRoutes);
+
 router.use('/movieapi', movieRoutes);
+router.use('/reviews', review);
+router.use('/favorites', favorite);
+
+const login= require('../api/login');
+
+router.use('/', homeRoutes);
+router.use('/movieapi', movieRoutes);
+router.use('/login', login);
+
 
 module.exports = router;
