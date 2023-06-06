@@ -22,13 +22,7 @@ searchBtn.on('click', function(event){
         var valObj= {
             Title: movieVal.value
         }
-        fetch('/', {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(valObj)
-        })
+        window.location.href= `/movie/${movieVal.value}`;
 });
 
 
