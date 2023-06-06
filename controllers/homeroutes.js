@@ -45,11 +45,6 @@ router.get('/synapsis/:movie', async (req, res) => {
     try {
         async function getSynapsis(title, year) {
 
-            // added new API link to get the full plot of the movie
-            const URL = `http://www.omdbapi.com/?t=${title}&y=${year}&plot=full&apikey=6d03d3e5`;
-
-            // const URL=`https://www.omdbapi.com/?s=${title}&page=1&apikey=6d03d3e5`;
-            // added new link to get the full plot of the movie
             const URL = `http://www.omdbapi.com/?t=${title}&y=${year}&plot=full&apikey=72db57ad`;
 
             const response = await fetch(`${URL}`);
