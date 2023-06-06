@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Review</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css" rel="stylesheet"> 
-</head>
+
 <body>
   <header class="bg-gray-900 text-white p-4 text-center">
-    <h1 class="text-2xl font-bold">Movie Title</h1>
+    <h1 class="text-2xl font-bold">Latest Reviews</h1>
   </header>
-  <section class="mt-8">
-    <h2 class="text-2xl font-bold mb-4">Latest Reviews</h2>
+  <section class="mt-8 bg-gray-50">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {{#each reviews}}
-      <div class="bg-white shadow p-4 rounded">
+      <div class="bg-gray-50 shadow p-4 rounded">
         <h3 class="text-xl font-semibold mb-2">{{userName}}</h3>
         <p class="text-gray-500 mb-4">Movie: {{movieTitle}}</p>
         <p class="mb-2">Rating: {{rating}}/5</p>
@@ -27,7 +19,7 @@
   <main class="container mx-auto p-4">
     <section class="bg-white shadow p-4 rounded">
       <h2 class="text-2xl font-bold mb-4">Write a Review</h2>
-      <form id="reviewForm" action="/reviews" method="POST">
+      <form id="reviewForm" action="/reviews" method="POST" class="bg-gray-50">
         <div class="mb-4">
           <label for="movieTitle" class="block">Movie Title</label>
           <input type="text" id="movieTitle" name="movieTitle" required class="w-full p-2 border rounded">
@@ -50,5 +42,6 @@
   </footer>
 
   <script src="/models/Review.js"></script> 
+
 </body>
 </html>
