@@ -1,29 +1,42 @@
+
 const { DataTypes } = require('sequelize');
+
+const { Model, DataTypes } = require('sequelize');
+
 const sequelize = require('../config/connection');
 
-const Review = sequelize.define('Review', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-    allowNull: false
+class Review extends Model {}
+
+Review.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
   },
-  userName: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  movieTitle: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  rating: {
-    type: DataTypes.FLOAT,
-    allowNull: false
-  },
-  reviewText: {
-    type: DataTypes.TEXT,
-    allowNull: false
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'Review',
   }
-});
+);
 
 module.exports = Review;

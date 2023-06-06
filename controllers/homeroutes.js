@@ -26,17 +26,14 @@ router.get('/', (req, res) => {
 }
 });
 
-// Middleware
-app.use(express.urlencoded({ extended: false }));
-
-router.post('/', (req, res) => {
+router.get('/movie/:keyword', (req, res) => {
     try {
-        getMovieResults(req.body.Title).then(data =>{
+        getMovieResults(req.params.keyword).then(data =>{
             console.log(data);
             res.render('homepage', {
-                data,
+                data
                 // logged_in: req.session.logged_in
-            })
+            })    
         })
     }
     catch (err) {
@@ -47,8 +44,14 @@ router.post('/', (req, res) => {
 router.get('/synapsis/:movie', async (req, res) => {
     try {
         async function getSynapsis(title, year) {
+
             // added new API link to get the full plot of the movie
             const URL = `http://www.omdbapi.com/?t=${title}&y=${year}&plot=full&apikey=6d03d3e5`;
+
+            // const URL=`https://www.omdbapi.com/?s=${title}&page=1&apikey=6d03d3e5`;
+            // added new link to get the full plot of the movie
+            const URL = `http://www.omdbapi.com/?t=${title}&y=${year}&plot=full&apikey=72db57ad`;
+
             const response = await fetch(`${URL}`);
             const data = await response.json();
             console.log(data)
@@ -66,26 +69,5 @@ router.get('/synapsis/:movie', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-// Display movie results from the API based on search Bar text input
-
-
-//     app.listen(3001, () => {
-//     console.log('Now Listening!')
-// });
-
-// router.post('syanpsis', async (req, res) => {
-//     let response = req.body;
-//     res.send('Synapsis' + JSON.stringify(data));
-// })
-
-// Display movie results from the API based on search Bar text input
-
-//   searchBtn.on('click', function (event){
-//     event.preventDefault();
-//     searchHistArr.push(textVal.value);
-//     console.log(textVal.value)
-//     localStorage.setItem('movies', JSON.stringify(searchHistArr));
-// });
 
 module.exports = router;
