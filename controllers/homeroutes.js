@@ -3,12 +3,20 @@ const router = require('express').Router();
 const fetch = require('node-fetch');
 const {getMovieResults} = require('../utils/getMovieResults');
 
-// Registering public folder to express 
-var express = require('express');
+
+// Registering public folder to express
+var express = require("express");
 var app = express();
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + "/public"));
 
 // Fetching the API using try and catch() for GET Route
+
+
+router.post("/syanpsis", async (req, res) => {
+  console.log(req.body);
+  res.send(req.body);
+});
+
 router.get('/', (req, res) => {
     try {
         getMovieResults('avengers').then(data =>{
@@ -42,7 +50,7 @@ router.post('/', (req, res) => {
 }
 });
 
-router.get('/synapsis/', async (req, res) => {
+router.get('/synapsis/:movie', async (req, res) => {
     try {
         async function getSynapsis(title, year) {
             // const URL=`https://www.omdbapi.com/?s=${title}&page=1&apikey=6d03d3e5`;
@@ -68,6 +76,18 @@ router.get('/synapsis/', async (req, res) => {
 
 // Display movie results from the API based on search Bar text input
 
+
+//     app.listen(3001, () => {
+//     console.log('Now Listening!')
+// });
+
+// router.post('syanpsis', async (req, res) => {
+//     let response = req.body;
+//     res.send('Synapsis' + JSON.stringify(data));
+// })
+
+// Display movie results from the API based on search Bar text input
+
 //   searchBtn.on('click', function (event){
 //     event.preventDefault();
 //     searchHistArr.push(textVal.value);
@@ -75,14 +95,4 @@ router.get('/synapsis/', async (req, res) => {
 //     localStorage.setItem('movies', JSON.stringify(searchHistArr));
 // });
 
-// router.post('', async (req, res) => {
-//     let response = req.body;
-//     res.send('Synapsis' + JSON.stringify(data));
-// })
-
-// app.listen(3001, () => {
-//     console.log('Now Listening!')
-// })
 module.exports = router;
-
-
