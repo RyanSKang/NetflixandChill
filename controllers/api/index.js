@@ -1,26 +1,13 @@
+// Defining Routes and Requiring
 const router = require('express').Router();
-const movieRoutes = require('./movieRoutes');
-
-const homeRoutes= require('../homeroutes');
 const reviewRoutes= require('./reviews');
+const favoriteRoutes= require('./favorites')
+const loginRoutes= require('./login');
 
-router.use('/', homeRoutes);
-router.use('/movieapi', movieRoutes);
+// const homeRoutes= require('../homeroutes');
 router.use('/reviews', reviewRoutes);
-
-const review= require('./reviews')
-const favorite= require('./favorites')
-router.use('/', homeRoutes);
-
-router.use('/movieapi', movieRoutes);
-router.use('/reviews', review);
-router.use('/favorites', favorite);
-
-const login= require('../api/login');
-
-router.use('/', homeRoutes);
-router.use('/movieapi', movieRoutes);
-router.use('/login', login);
+router.use('/favorites', favoriteRoutes);
+router.use('/login', loginRoutes);
 
 
 module.exports = router;
