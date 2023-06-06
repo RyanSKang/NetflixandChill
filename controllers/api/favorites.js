@@ -3,11 +3,12 @@ const router = express.Router();
 const { Favorite, User,  } = require('../../models');
 
 // Add a favorite
-router.post('/', async (req, res) => {
+router.post('/favorites', async (req, res) => {
   try {
     const { userId, movieId } = req.body;
     const favorite = await Favorite.create({ userId, movieId });
     res.json(favorite);
+    res.render('favorites');
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });

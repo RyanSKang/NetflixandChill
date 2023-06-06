@@ -3,12 +3,6 @@ const router = require('express').Router();
 const fetch = require('node-fetch');
 const {getMovieResults} = require('../utils/getMovieResults');
 
-
-// Registering public folder to express
-var express = require("express");
-var app = express();
-app.use(express.static(__dirname + "/public"));
-
 // Fetching the API using try and catch() for GET Route
 
 router.get('/', (req, res) => {
@@ -64,5 +58,15 @@ router.get('/synapsis/:movie', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/login', (req, res) => {
+    res.render('login');
+  });
+
+// GET route for displaying the reviews page
+router.get('/reviews', (req, res) => {
+    res.render('reviews');
+    
+  });
 
 module.exports = router;

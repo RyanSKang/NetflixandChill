@@ -24,7 +24,7 @@ const {User} = require('../../models');
 // app.use(express.urlencoded({ extended: true }));
 
 // Define a route to render the login.handlebars file
-router.get('/', (req, res) => {
+router.get('/login', (req, res) => {
   res.render('login');
 });
 
