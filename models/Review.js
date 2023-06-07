@@ -12,20 +12,23 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    review: {
       type: DataTypes.STRING,
     },
-    user_id: {
+    rating: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
+    }
+  //   // user_name: {
+  //   //   type: DataTypes.INTEGER,
+  //   //   references: {
+  //   //     model: 'user',
+  //   //     key: 'name',
+  //   //   },
+  //   // },
   },
   {
     sequelize,
