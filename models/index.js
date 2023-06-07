@@ -10,13 +10,13 @@ User.hasMany(Favorite,
 Favorite.belongsTo(User, {
   foreignKey: 'user_id'
 });
-User.hasMany(Review,
-  {
- foreignKey: 'user_id',
- onDelete: 'CASCADE'
-});
-Review.belongsTo(User, {
-  foreignKey: 'user_id'
-})
+// User.hasMany(Review,
+//   {
+//  foreignKey: 'name',
+//  onDelete: 'CASCADE'
+// });
+// Review.belongsTo(User, {
+//   foreignKey: 'name'
+// })
 
 module.exports = { User, Favorite, Review,};

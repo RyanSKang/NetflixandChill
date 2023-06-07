@@ -3,39 +3,28 @@ let rating = document.getElementById("rating");
 let reviewText = document.getElementById("reviewText");
 let movieTitle = document.getElementById("movieTitle");
 let userName = document.getElementById("userName")
-let button = document.getElementById("button");
-let newReview = {rating, movieTitle, userName, reviewText}
+let submitBtn = document.getElementById('submitBtn');
 
-button.addEventListener("click", function(event){
-    // const rating = document.getElementById("rating").value
-    // const reviewText= document.getElementById("message").value
-    // const movieTitle= document.getElementById("message").dataset.title
-    // const userName = document.getElementById("message").dataset.user
+submitBtn.addEventListener("click", function(event){
     event.preventDefault();
-    var valObj= {
-        // or should it be newReview?
-        Title: reviewText.value
-    }
-    fetch('/api/reviews', {
+    // let newReview = {rating: rating.value, title: movieTitle.value, review: reviewText}
+    console.log(movieTitle.textContent)
+    // var valObj= {
+    //     // or should it be newReview?
+    //     Title: reviewText.value
+    // }
+    fetch('/api/reviews/', {
         method: "POST",
         headers: {
             "content-type": "application/json"
         },
-        body: JSON.stringify(valObj)
+        body: JSON.stringify({rating:rating.value, title: movieTitle.textContent, review: reviewText.value})
     }).then(response => {
         return response.json()
     }).then(data => {
         console.log(data)
     })
-    console.log (reviewText, rating)
+    window.location.reload();
 });
 
   
-//     if (reviewText) {
-//         try {
-//             const res = fetch ("/")
-//         } catch (error) {
-            
-//         }  console.log(reviewText, rating);
-//     }
-// })

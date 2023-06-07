@@ -37,6 +37,10 @@ router.get('/movie/:keyword', (req, res) => {
 
 router.get('/synapsis/:movie', async (req, res) => {
     try {
+        // const reviewData= await Review.findAll({where:{title: req.params.title}})
+        // if(reviewData){
+        //     const reviews=reviewData.map((review)=>review.get({plain: true}))
+        // }
         async function getSynapsis(title, year) {
 
             const URL = `http://www.omdbapi.com/?t=${title}&y=${year}&plot=full&apikey=72db57ad`;
@@ -47,6 +51,8 @@ router.get('/synapsis/:movie', async (req, res) => {
             res.render('synapsis', {
                 // the data will be sent into the synapsis.handlebars
                 ...data,
+            //    reviews
+             
                 // logged_in: req.session.logged_in
             });
         };
